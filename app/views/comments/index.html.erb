@@ -1,0 +1,7 @@
+<% @comments.each do |comment| %>
+  <p>Commenter: <%= comment.commenter %></p>
+  <p>Body: <%= comment.body %></p>
+<% end %>
+<br>
+<%= link_to "Back to article", article_path(@article) %>
+<%= link_to "Home", articles_path %>
