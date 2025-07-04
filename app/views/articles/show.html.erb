@@ -8,7 +8,7 @@
                   } %></li>
 </ul>
 <br>
-<h2><%= link_to "See Comments", article_comments_path(@article)  %></h2>
+<%= link_to "See all comments", article_comments_path(@article) %>
 <br>
 <h2>Add a comment:</h2>
-<%= render "comments/form", article: @article %>
+<%= render "comments/form" %>

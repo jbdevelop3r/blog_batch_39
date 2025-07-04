@@ -1,11 +1,29 @@
 <h1 style="">Articles</h1>
-<ul>
-  <% @articles.each do |article| %>
-    <li>
-      <%= link_to article.title, article %>
-    </li>
-  <% end %>
-</ul>
-<%= link_to "Create New Article", new_article_path %>
 <br>
-<%= @name %>
+<%= search_form_for @q do |f| %>
+  <%= f.label :title_or_body_cont %>
+  <%= f.search_field :title_or_body_cont %>
+  <%= f.submit %>
+<% end %>
+<br>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Title</th>
+      <th scope="col">Body</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @articles.each do |article| %>
+      <tr>
+        <td><%=  article.id %></td>
+        <td><%= link_to article.title, article %></td>
+        <td><%=  article.body %></td>
+      </tr>
+      <tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to "Create New Article", new_article_path %>
+  <br>
